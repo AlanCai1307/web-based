@@ -89,3 +89,7 @@ body {
     /* vertical-align 行内块和行内垂直方向对齐方式 */
     vertical-align: middle;
 }
+.user span{
+    font-size: 14px;
+    color: #999;
+}
