@@ -93,7 +93,8 @@
     }
     // 2. 打开方法 挂载 到 模态框的构造函数原型身上
     Modal.prototype.open = function () {
-      if (!document.querySelector('.modal')) {
+      const box = document.querySelector('.modal')
+      box && box.remove()
         // 把刚才创建的盒子 modalBox  渲染到 页面中  父元素.appendChild(子元素)
         document.body.appendChild(this.modalBox)
         // 获取 x  调用关闭方法
@@ -102,7 +103,7 @@
           // 这个this 指向 m 
           this.close()
         })
-      }
+
     }
     // 3. 关闭方法 挂载 到 模态框的构造函数原型身上
     Modal.prototype.close = function () {
