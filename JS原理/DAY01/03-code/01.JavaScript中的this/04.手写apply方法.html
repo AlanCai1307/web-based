@@ -18,7 +18,7 @@
      * */
     // 1. 定义myApply方法
     // 3. 接收参数并返回结果
-    Function.prototype.myApply = function (thisArg, args) {
+/*    Function.prototype.myApply = function (thisArg, args) {
       // console.log('myApply执行啦')
       // 2. 设置this并调用原函数
       const key = Symbol('key')
@@ -26,6 +26,13 @@
       const res = thisArg[key](...args)
       delete thisArg[key]
 
+      return res
+    }*/
+    Function.prototype.myApply = function (thisArg,args){
+      let key = Symbol('key')
+      thisArg[key] = this
+      const res = thisArg[key](...args)
+      delete thisArg[key]
       return res
     }
 

@@ -19,30 +19,31 @@
     // 1. 定义myCall方法
     // 3. 接收剩余参数并返回结果
     Function.prototype.myCall = function (thisArg, ...args) {
-      // console.log('myCall执行啦')
+      console.log('myCall执行啦')
       // 2. 设置this并调用原函数
       // thisArg 传入的设置为this的对象
-      // this 原函数(原函数.myCall)
+
       // console.log(args)
+      console.log('this', this)// this指向的被调用者：func原函数(原函数.myCall)
       thisArg.f = this
-      const res = thisArg.f(...args)
+      const res = thisArg.f(...args)// 原函数func的this指向它的被调用者：thisArg
       delete thisArg.f
       return res
     }
 
 
     // ------------- 测试代码 -------------
-    // const person = {
-    //   name: 'itheima'
-    // }
-    // function func(numA, numB) {
-    //   console.log(this)
-    //   console.log(numA, numB)
-    //   return numA + numB
-    // }
-    // // const res = func.myCall(person, 2, 8)
-    // const res = func.myCall(person, 6, 4)
-    // console.log('返回值为:', res)
+/*    const person = {
+      name: 'itheima'
+    }
+    function func(numA, numB) {
+      console.log(this)
+      console.log(numA, numB)
+      return numA + numB
+    }
+    // const res = func.myCall(person, 2, 8)
+    const res = func.myCall(person, 6, 4)
+    console.log('返回值为:', res)*/
 
 
     const food = {
