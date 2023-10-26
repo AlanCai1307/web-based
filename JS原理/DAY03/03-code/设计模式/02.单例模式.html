@@ -24,6 +24,7 @@
 
       // 3. 添加静态方法
       static getInstance() {
+        console.log('this',this)// SingleTon {}
         // 4. 判断并返回对象
         if (this.#instance === undefined) {
           this.#instance = new SingleTon()

@@ -40,7 +40,7 @@
     }
 
     document.querySelector('.query').addEventListener('keyup', async function (e) {
-      if (e.keyCode === 13) {
+      if (e.keyCode === 13) {//回车键
         const city = await searchCity(this.value)
         console.log(city)
       }
